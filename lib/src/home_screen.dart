@@ -63,16 +63,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   //load camera function
   _loadCamera() {
-    // Find the front camera description
+    // front camera description
     final frontCamera = cameraList!.firstWhere(
       (camera) => camera.lensDirection == CameraLensDirection.front,
     );
 
-    // Initialize the CameraController with the front camera
+    // initialize the CameraController with the front camera
     cameraController = CameraController(
       frontCamera,
       ResolutionPreset.medium,
     );
+
+    //in case if you wanna choose back camera
+    // cameraController = CameraController(cameraList![0], ResolutionPreset.medium); 
 
     cameraController!.initialize().then((value) {
       if (!mounted) return;
