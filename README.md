@@ -1,4 +1,4 @@
-# emotterr
+# emotter
 
 A new Flutter project.
 
